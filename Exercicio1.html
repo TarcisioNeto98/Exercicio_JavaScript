@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+	<title>Brincadeira com JavaScript</title>
+</head>
+<body>
+
+	<label for="nome">Nome: </label><input id="nome" type="search" name="nome" value="Clique aqui"><br>
+	<label for="email">Email: </label><input id = "email" type="email" name="email" value="Clique aqui"><br>
+	<input class="Mostrar" type="button" name="mostrar" value="mostrar">
+
+	<script type="text/javascript">
+		var nome = document.getElementById("nome"), email = document.querySelector("#email");
+		var botaoMostrar = document.getElementsByClassName('Mostrar')[0];
+
+		/*nome.onclick = function(){
+			alert("oi");
+		}*/
+
+		/*nome.addEventListener("click", function(){
+			alert("aaa");
+		});*/
+
+		nome.addEventListener("blur", function(){
+			if(this.value == "") alert("Digite um nome");
+		});
+
+		nome.addEventListener("click", function(){
+			this.value = "";
+		});
+
+		email.addEventListener("blur", function(){
+			if(this.value == "") alert("Digite um email");
+		});
+
+		email.addEventListener("click", function(){
+			this.value = "";
+		});
+
+		botaoMostrar.addEventListener("click", function(){
+			if(nome.value == "" || email.value == "") alert("Informe suas informações nos campos.");
+			else alert("Nome: " + nome.value + "\nEmail: " + email.value);
+		});
+	</script>
+</body>
+</html>
